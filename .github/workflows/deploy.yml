@@ -90,5 +90,5 @@ jobs:
 
       - name: Update deployment status
         run: |
-          echo "🚀 Deployed to: https://pomodoro.kaitojd.me"
-          echo "📊 Build size: $(du -sh dist | cut -f1)"
+          echo "Deployed to: https://pomodoro.kaitojd.me"
+          echo "Build size: $(du -sh dist | cut -f1)"
