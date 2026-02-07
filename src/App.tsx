@@ -48,13 +48,15 @@ function App() {
   const timerDisplayRef = useRef<HTMLDivElement>(null)
 
   // Update refs when state changes
-  timeRef.current = time
-  isBreakTimeRef.current = isBreakTime
-  currentSessionRef.current = currentSession
-  workDurationRef.current = workDuration
-  shortBreakDurationRef.current = shortBreakDuration
-  longBreakDurationRef.current = longBreakDuration
-  sessionsBeforeLongBreakRef.current = sessionsBeforeLongBreak
+  useEffect(() => {
+    timeRef.current = time
+    isBreakTimeRef.current = isBreakTime
+    currentSessionRef.current = currentSession
+    workDurationRef.current = workDuration
+    shortBreakDurationRef.current = shortBreakDuration
+    longBreakDurationRef.current = longBreakDuration
+    sessionsBeforeLongBreakRef.current = sessionsBeforeLongBreak
+  }, [time, isBreakTime, currentSession, workDuration, shortBreakDuration, longBreakDuration, sessionsBeforeLongBreak])
 
   useEffect(() => {
     if (!isRunning) return
