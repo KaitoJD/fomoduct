@@ -54,10 +54,13 @@ export const SessionNotification: React.FC<SessionNotificationProps> = ({
 
   useEffect(() => {
     if (isVisible) {
-      setShowNotification(true)
-      // Trigger enter animation after a brief delay
+      // Use requestAnimationFrame to avoid synchronous setState in effect
       requestAnimationFrame(() => {
-        setIsAnimating(true)
+        setShowNotification(true)
+        // Trigger enter animation after a brief delay
+        requestAnimationFrame(() => {
+          setIsAnimating(true)
+        })
       })
 
       // Auto-close after delay
@@ -68,8 +71,10 @@ export const SessionNotification: React.FC<SessionNotificationProps> = ({
       return () => clearTimeout(autoCloseTimer)
     } else {
       // When isVisible becomes false, immediately reset internal state
-      setIsAnimating(false)
-      setShowNotification(false)
+      requestAnimationFrame(() => {
+        setIsAnimating(false)
+        setShowNotification(false)
+      })
     }
   }, [isVisible, autoCloseDelay, handleClose])
 
