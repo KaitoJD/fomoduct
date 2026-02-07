@@ -143,7 +143,7 @@ export const SessionNotification: React.FC<SessionNotificationProps> = ({
 
           {/* Title */}
           <h2 id="notification-title" className="notification-title">
-            {sessionType === 'work' ? '🎉 Work Session Complete!' : '☕ Break Time!'}
+            {sessionType === 'work' ? 'Work Session Complete!' : 'Break Time!'}
           </h2>
 
           {/* Message */}

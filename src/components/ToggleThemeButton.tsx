@@ -40,8 +40,8 @@ export const ToggleThemeButton: React.FC = () => {
       aria-checked={theme === 'dark'}
       tabIndex={0}
       data-checked={theme === 'dark'}
-      aria-label={theme === 'light' ? 'Chuyển sang chế độ tối' : 'Chuyển sang chế độ sáng'}
-      title={theme === 'light' ? 'Chuyển sang chế độ tối' : 'Chuyển sang chế độ sáng'}
+      aria-label={theme === 'light' ? 'Switch to dart mode' : 'Switch to light mode'}
+      title={theme === 'light' ? 'Switch to dart mode' : 'Switch to light mode'}
       onClick={toggleTheme}
       onKeyDown={handleKeyDown}
     >
